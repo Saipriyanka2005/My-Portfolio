@@ -1,0 +1,1401 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>SaiPriyanka | B.Tech CSE Portfolio</title>
+
+<style>
+
+/* =========================
+   RESET
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:"Segoe UI",Arial,sans-serif;
+    background:#f7f3ff;
+    color:#292238;
+    line-height:1.6;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+header{
+    position:sticky;
+    top:0;
+    z-index:1000;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:18px 8%;
+
+    background:rgba(91,45,170,0.96);
+    backdrop-filter:blur(12px);
+
+    box-shadow:0 5px 25px rgba(0,0,0,0.15);
+}
+
+.logo{
+    color:white;
+    font-size:28px;
+    font-weight:800;
+}
+
+.logo span{
+    color:#e5ceff;
+}
+
+nav{
+    display:flex;
+    gap:25px;
+    flex-wrap:wrap;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    font-size:16px;
+    font-weight:600;
+
+    position:relative;
+
+    transition:0.3s;
+}
+
+nav a::after{
+    content:"";
+
+    position:absolute;
+    left:0;
+    bottom:-5px;
+
+    width:0;
+    height:2px;
+
+    background:#f3ddff;
+
+    transition:0.3s;
+}
+
+nav a:hover{
+    color:#ead5ff;
+}
+
+nav a:hover::after{
+    width:100%;
+}
+
+/* =========================
+   COMMON
+========================= */
+
+section{
+    padding:100px 8%;
+}
+
+h2{
+    text-align:center;
+
+    font-size:42px;
+
+    color:#693cc1;
+
+    margin-bottom:50px;
+}
+
+h2::after{
+    content:"";
+
+    display:block;
+
+    width:75px;
+    height:4px;
+
+    margin:12px auto;
+
+    border-radius:20px;
+
+    background:linear-gradient(
+        90deg,
+        #693cc1,
+        #c69cff
+    );
+}
+
+/* =========================
+   HOME
+========================= */
+
+.home{
+
+    min-height:calc(100vh - 75px);
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    gap:70px;
+
+    padding:70px 10%;
+
+    overflow:hidden;
+
+    background:
+    radial-gradient(
+        circle at 85% 20%,
+        #ddc7ff,
+        transparent 28%
+    ),
+    radial-gradient(
+        circle at 10% 80%,
+        #eadcff,
+        transparent 30%
+    ),
+    linear-gradient(
+        135deg,
+        #fcfaff,
+        #eee5ff
+    );
+}
+
+.home-text{
+    flex:1;
+
+    max-width:700px;
+
+    animation:slideLeft 1.2s ease;
+}
+
+.small-title{
+    color:#7547ca;
+
+    font-size:22px;
+
+    font-weight:600;
+
+    margin-bottom:8px;
+}
+
+.home h1{
+    font-size:72px;
+
+    line-height:1.05;
+
+    color:#6035b3;
+
+    margin-bottom:18px;
+
+    text-shadow:
+    3px 5px 15px rgba(108,63,197,0.15);
+}
+
+.home h3{
+    font-size:28px;
+
+    color:#332949;
+
+    margin-bottom:20px;
+}
+
+.home-description{
+    font-size:19px;
+
+    color:#655d73;
+
+    max-width:620px;
+
+    margin-bottom:32px;
+}
+
+/* =========================
+   BUTTON
+========================= */
+
+.btn{
+
+    display:inline-block;
+
+    padding:15px 30px;
+
+    border-radius:30px;
+
+    background:
+    linear-gradient(
+        135deg,
+        #7848d0,
+        #4d2695
+    );
+
+    color:white;
+
+    text-decoration:none;
+
+    font-size:16px;
+
+    font-weight:bold;
+
+    border:none;
+
+    cursor:pointer;
+
+    box-shadow:
+    0 10px 25px rgba(92,44,177,0.3);
+
+    transition:0.35s;
+}
+
+.btn:hover{
+
+    transform:
+    translateY(-6px)
+    scale(1.03);
+
+    box-shadow:
+    0 15px 35px rgba(92,44,177,0.45);
+}
+
+/* =========================
+   PROFILE
+========================= */
+
+.profile-area{
+
+    flex:1;
+
+    display:flex;
+
+    justify-content:center;
+    align-items:center;
+
+    animation:slideRight 1.2s ease;
+}
+
+.profile{
+
+    width:390px;
+    height:390px;
+
+    padding:10px;
+
+    border-radius:50%;
+
+    background:
+    linear-gradient(
+        135deg,
+        #6738be,
+        #d0aaff,
+        #7040c8
+    );
+
+    box-shadow:
+    0 25px 60px rgba(82,40,160,0.35);
+
+    animation:
+    float 4s ease-in-out infinite,
+    glow 3s ease-in-out infinite;
+}
+
+.profile img{
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    border-radius:50%;
+
+    border:9px solid white;
+}
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes slideLeft{
+
+    from{
+        opacity:0;
+        transform:translateX(-80px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateX(0);
+    }
+}
+
+@keyframes slideRight{
+
+    from{
+        opacity:0;
+        transform:translateX(80px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateX(0);
+    }
+}
+
+@keyframes float{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-18px);
+    }
+}
+
+@keyframes glow{
+
+    0%,100%{
+        box-shadow:
+        0 25px 60px rgba(82,40,160,0.3);
+    }
+
+    50%{
+        box-shadow:
+        0 25px 75px rgba(112,64,200,0.5);
+    }
+}
+
+@keyframes cardAppear{
+
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* =========================
+   ABOUT
+========================= */
+
+.about{
+    background:white;
+}
+
+.about-box{
+
+    max-width:950px;
+
+    margin:auto;
+
+    padding:45px;
+
+    text-align:center;
+
+    background:
+    linear-gradient(
+        135deg,
+        #faf7ff,
+        white
+    );
+
+    border-radius:25px;
+
+    border:1px solid #eee4ff;
+
+    box-shadow:
+    0 15px 40px rgba(0,0,0,0.08);
+
+    transition:0.4s;
+}
+
+.about-box:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:
+    0 20px 50px rgba(108,63,197,0.18);
+}
+
+.about-box p{
+    font-size:19px;
+    color:#625a70;
+}
+
+/* =========================
+   SKILLS
+========================= */
+
+.skills-container{
+
+    max-width:1100px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(190px,1fr));
+
+    gap:25px;
+}
+
+.skill{
+
+    padding:30px 20px;
+
+    text-align:center;
+
+    background:white;
+
+    border-radius:20px;
+
+    border:1px solid #eee5ff;
+
+    box-shadow:
+    0 10px 25px rgba(0,0,0,0.07);
+
+    font-size:20px;
+
+    font-weight:bold;
+
+    color:#633bb7;
+
+    transition:0.4s;
+
+    animation:cardAppear 1s ease;
+}
+
+.skill:hover{
+
+    transform:
+    translateY(-12px)
+    rotate(1deg);
+
+    background:
+    linear-gradient(
+        135deg,
+        #eee2ff,
+        white
+    );
+
+    box-shadow:
+    0 18px 40px rgba(108,63,197,0.2);
+}
+
+/* =========================
+   EDUCATION
+========================= */
+
+.education{
+    background:white;
+}
+
+.education-card{
+
+    max-width:850px;
+
+    margin:auto;
+
+    padding:40px;
+
+    background:#faf8ff;
+
+    border-radius:20px;
+
+    border-left:7px solid #6c3fc5;
+
+    box-shadow:
+    0 12px 30px rgba(0,0,0,0.08);
+
+    transition:0.4s;
+}
+
+.education-card:hover{
+
+    transform:translateX(10px);
+
+    box-shadow:
+    0 18px 40px rgba(108,63,197,0.15);
+}
+
+.education-card h3{
+
+    color:#6339b6;
+
+    font-size:27px;
+
+    margin-bottom:18px;
+}
+
+.education-card p{
+
+    font-size:18px;
+
+    margin:10px 0;
+}
+
+/* =========================
+   PROJECTS
+========================= */
+
+.projects-container{
+
+    max-width:1150px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(290px,1fr));
+
+    gap:30px;
+}
+
+.project{
+
+    position:relative;
+
+    padding:35px;
+
+    background:white;
+
+    border-radius:22px;
+
+    border:1px solid #eee5ff;
+
+    box-shadow:
+    0 10px 30px rgba(0,0,0,0.08);
+
+    overflow:hidden;
+
+    transition:0.4s;
+}
+
+.project::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:6px;
+
+    background:
+    linear-gradient(
+        90deg,
+        #6339b7,
+        #c49cff
+    );
+}
+
+.project:hover{
+
+    transform:
+    translateY(-12px)
+    scale(1.02);
+
+    box-shadow:
+    0 22px 45px rgba(108,63,197,0.2);
+}
+
+.project h3{
+
+    color:#6339b7;
+
+    font-size:25px;
+
+    margin-bottom:15px;
+}
+
+.project p{
+
+    color:#625a70;
+
+    font-size:16px;
+
+    margin-bottom:12px;
+}
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact{
+
+    background:
+    linear-gradient(
+        135deg,
+        #f1e8ff,
+        white
+    );
+}
+
+.contact-container{
+
+    max-width:1100px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(230px,1fr));
+
+    gap:25px;
+}
+
+.contact-card{
+
+    position:relative;
+
+    background:white;
+
+    padding:35px 25px;
+
+    border-radius:22px;
+
+    text-align:center;
+
+    border:1px solid #eee5ff;
+
+    box-shadow:
+    0 10px 30px rgba(0,0,0,0.08);
+
+    transition:0.4s;
+
+    overflow:hidden;
+}
+
+.contact-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:5px;
+
+    background:
+    linear-gradient(
+        90deg,
+        #693cc1,
+        #c49aff
+    );
+}
+
+.contact-card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:
+    0 20px 40px rgba(108,63,197,0.2);
+}
+
+.contact-icon{
+
+    font-size:45px;
+
+    margin-bottom:15px;
+}
+
+.contact-card h3{
+
+    color:#6339b7;
+
+    font-size:22px;
+
+    margin-bottom:10px;
+}
+
+.contact-card p{
+
+    color:#665e75;
+
+    word-break:break-word;
+
+    margin-bottom:18px;
+}
+
+.contact-card a{
+
+    color:#6c3fc5;
+
+    text-decoration:none;
+
+    font-weight:bold;
+
+    transition:0.3s;
+}
+
+.contact-card a:hover{
+    color:#3f217f;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+
+    background:
+    linear-gradient(
+        135deg,
+        #4b258e,
+        #6d3fc1
+    );
+
+    color:white;
+
+    text-align:center;
+
+    padding:28px;
+
+    font-size:16px;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:900px){
+
+    header{
+        flex-direction:column;
+        gap:15px;
+    }
+
+    nav{
+        justify-content:center;
+        gap:15px;
+    }
+
+    nav a{
+        font-size:14px;
+    }
+
+    .home{
+
+        flex-direction:column-reverse;
+
+        text-align:center;
+
+        padding-top:60px;
+    }
+
+    .home h1{
+        font-size:55px;
+    }
+
+    .home h3{
+        font-size:22px;
+    }
+
+    .profile{
+        width:300px;
+        height:300px;
+    }
+}
+
+@media(max-width:600px){
+
+    section{
+        padding:70px 6%;
+    }
+
+    h2{
+        font-size:32px;
+    }
+
+    .home h1{
+        font-size:43px;
+    }
+
+    .home-description{
+        font-size:17px;
+    }
+
+    .profile{
+        width:240px;
+        height:240px;
+    }
+
+    .about-box{
+        padding:25px;
+    }
+
+    .contact-container{
+        grid-template-columns:1fr;
+    }
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     NAVIGATION
+========================= -->
+
+<header>
+
+<div class="logo">
+Sai<span>Priyanka</span>
+</div>
+
+<nav>
+
+<a href="#home"
+   onclick="openSection('home'); return false;">
+Home
+</a>
+
+<a href="#about"
+   onclick="openSection('about'); return false;">
+About
+</a>
+
+<a href="#skills"
+   onclick="openSection('skills'); return false;">
+Skills
+</a>
+
+<a href="#education"
+   onclick="openSection('education'); return false;">
+Education
+</a>
+
+<a href="#projects"
+   onclick="openSection('projects'); return false;">
+Projects
+</a>
+
+<a href="#contact"
+   onclick="openSection('contact'); return false;">
+Contact
+</a>
+
+</nav>
+
+</header>
+
+
+<!-- =========================
+     HOME
+========================= -->
+
+<section class="home" id="home">
+
+<div class="home-text">
+
+<p class="small-title">
+Hello, I'm
+</p>
+
+<h1>
+SaiPriyanka
+</h1>
+
+<h3>
+B.Tech Computer Science Engineering Student
+</h3>
+
+<p class="home-description">
+
+I am a passionate Computer Science student interested in
+programming, web development and software development.
+I enjoy learning new technologies, solving problems and
+building useful projects.
+
+</p>
+
+<a
+href="#projects"
+onclick="openSection('projects'); return false;"
+class="btn">
+
+View My Projects ↗
+
+</a>
+
+</div>
+
+
+<!-- YOUR IMAGE -->
+
+<div class="profile-area">
+
+<div class="profile">
+
+<!--
+CHANGE ONLY THIS IMAGE NAME
+Example: photo.jpg / photo.png
+-->
+
+<img
+src="me.jpeg"
+alt="SaiPriyanka">
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     ABOUT
+========================= -->
+
+<section class="about" id="about">
+
+<h2>
+About Me
+</h2>
+
+<div class="about-box">
+
+<p>
+
+I am a B.Tech Computer Science Engineering student at VFSTR.
+I am interested in programming, web development, problem solving
+and learning new technologies. I am continuously improving my
+technical skills and working on projects to gain practical
+experience.
+
+</p>
+
+<br>
+
+<a
+href="#skills"
+onclick="openSection('skills'); return false;"
+class="btn">
+
+Explore My Skills ↗
+
+</a>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     SKILLS
+========================= -->
+
+<section id="skills">
+
+<h2>
+My Skills
+</h2>
+
+<div class="skills-container">
+
+<div class="skill">
+💻
+<br>
+HTML
+</div>
+
+<div class="skill">
+🎨
+<br>
+CSS
+</div>
+
+<div class="skill">
+⚡
+<br>
+JavaScript
+</div>
+
+<div class="skill">
+🐍
+<br>
+Python
+</div>
+
+<div class="skill">
+☕
+<br>
+Java
+</div>
+
+<div class="skill">
+🗄️
+<br>
+SQL
+</div>
+
+<div class="skill">
+🔧
+<br>
+Git
+</div>
+
+<div class="skill">
+🌐
+<br>
+GitHub
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     EDUCATION
+========================= -->
+
+<section class="education" id="education">
+
+<h2>
+Education
+</h2>
+
+<div class="education-card">
+
+<h3>
+B.Tech - Computer Science Engineering
+</h3>
+
+<p>
+🎓 <b>College:</b> VFSTR
+</p>
+
+<p>
+📚 <b>Branch:</b> Computer Science Engineering
+</p>
+
+<p>
+📌 <b>Status:</b> Currently Pursuing
+</p>
+
+<br>
+
+<a
+href="#education"
+onclick="openSection('education'); return false;"
+class="btn">
+
+View Education ↗
+
+</a>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     PROJECTS
+========================= -->
+
+<section id="projects">
+
+<h2>
+My Projects
+</h2>
+
+<div class="projects-container">
+
+
+<!-- PROJECT 1 -->
+
+<div class="project">
+
+<h3>
+Online Voting System
+</h3>
+
+<p>
+
+A web-based voting system designed to provide
+a simple and user-friendly voting experience.
+
+</p>
+
+<p>
+<b>Technologies:</b>
+HTML, CSS, JavaScript
+</p>
+
+<a
+href="#projects"
+onclick="openSection('projects'); return false;"
+class="btn">
+
+View Project ↗
+
+</a>
+
+</div>
+
+
+<!-- PROJECT 2 -->
+
+<div class="project">
+
+<h3>
+Task Manager
+</h3>
+
+<p>
+
+A simple task management application that allows
+users to add, manage and complete daily tasks.
+
+</p>
+
+<p>
+<b>Technologies:</b>
+HTML, CSS, JavaScript
+</p>
+
+<a
+href="#projects"
+onclick="openSection('projects'); return false;"
+class="btn">
+
+View Project ↗
+
+</a>
+
+</div>
+
+
+<!-- PROJECT 3 -->
+
+<div class="project">
+
+<h3>
+Language Translation App
+</h3>
+
+<p>
+
+A simple application for translating text between
+different languages and maintaining translation history.
+
+</p>
+
+<p>
+<b>Technologies:</b>
+HTML, CSS, JavaScript
+</p>
+
+<a
+href="#projects"
+onclick="openSection('projects'); return false;"
+class="btn">
+
+View Project ↗
+
+</a>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     CONTACT
+========================= -->
+
+<section class="contact" id="contact">
+
+<h2>
+Let's Connect
+</h2>
+
+<div class="contact-container">
+
+
+<!-- EMAIL -->
+
+<div class="contact-card">
+
+<div class="contact-icon">
+📧
+</div>
+
+<h3>
+Email
+</h3>
+
+<p>
+saipriyanka389
+</p>
+
+<a
+href="mailto:saipriyanka389">
+
+Send Email ↗
+
+</a>
+
+</div>
+
+
+<!-- GITHUB -->
+
+<div class="contact-card">
+
+<div class="contact-icon">
+💻
+</div>
+
+<h3>
+GitHub
+</h3>
+
+<p>
+Saipriyanka2005
+</p>
+
+<a
+href="https://github.com/Saipriyanka2005"
+target="_blank">
+
+Visit GitHub ↗
+
+</a>
+
+</div>
+
+
+<!-- LEETCODE -->
+
+<div class="contact-card">
+
+<div class="contact-icon">
+🧩
+</div>
+
+<h3>
+LeetCode
+</h3>
+
+<p>
+saipriyanka_
+</p>
+
+<a
+href="https://leetcode.com/u/saipriyanka_/"
+target="_blank">
+
+View LeetCode ↗
+
+</a>
+
+</div>
+
+
+<!-- CODECHEF -->
+
+<div class="contact-card">
+
+<div class="contact-icon">
+👨‍💻
+</div>
+
+<h3>
+CodeChef
+</h3>
+
+<p>
+saipriyanka30
+</p>
+
+<a
+href="https://www.codechef.com/users/saipriyanka30"
+target="_blank">
+
+View CodeChef ↗
+
+</a>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+<p>
+© 2026 SaiPriyanka | B.Tech CSE Portfolio
+</p>
+
+</footer>
+
+
+<!-- =========================
+     JAVASCRIPT
+========================= -->
+
+<script>
+
+function openSection(sectionId){
+
+    /*
+       Opens the SAME portfolio page
+       in a NEW TAB without using
+       index.html, so Live Server
+       will not show "Cannot GET".
+    */
+
+    let newTab = window.open(
+        window.location.href.split("#")[0] + "#" + sectionId,
+        "_blank"
+    );
+
+    if(newTab){
+        newTab.focus();
+    }
+
+}
+
+</script>
+
+
+</body>
+
+</html>
